@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <script src="../jquery-3.4.1.js"></script>
+    <script src="../jquery.magnific-popup.js"></script>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../magnific-popup.css">
+    <script src="kmeans.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Algorithm-Centric</title>
+  </head>
+
+  <body bgcolor=#ffffff>
+    <div class="dropdown">
+      <button class="dropbtn">K-Means Clustering</button>
+    </div>
+    <div class="dropdown2">
+      <button class="dropbtn"> Data </button>
+      <div class="dropdown-content">
+        <span class="linear_regression_data" id="Social_Network_Ads">Mall Customers</span>
+      </div>
+    </div>
+
+    <div style= " position: relative;display: inline-block; padding-left: 100px;">
+        <a class="show_data" href="./MallCustomers/data1.svg" target="_blank">Show data</a>
+        <!-- <a class="show_data" href="./MallCustomers/table.svg" target="_blank">Show preprocessed data</a> -->
+        <!-- <a class="show_data" href="./simple_linear_regression.py" target="_blank">Show code</a> -->
+    </div>
+    <br>
+    <img src="../default.svg" alt="Plot" class="plot" align="right">
+
+
+    <br><fieldset class="input_param" style = "display: inline-block;">
+        K (Number of Clusters)
+        <br>1 <span style = "float: right;">11</span>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="11" value="5" step="1" class="rangeslider" id="n_clusters">
+        </div>
+        <br>Initialisation Method
+        <form>
+            <input type="radio" name="init" value="k-means++" checked>KMeans++</input>
+            <input type="radio" name="init" value="random">Random</input>
+        </form>
+        <br>Number of Iterations
+        <br>1 <span style = "float: right;">20</span>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="20" value="10" step="1" class="rangeslider" id="n_init">
+        </div>
+
+        <br><label class="switch">
+          <input type="checkbox" id="traintest" checked="checked">
+          <span class="slider"></span>
+        </label>
+    </fieldset>
+
+    <br></br>
+    <button class="run_button">Show Output</button>
+    <br></br>
+    <fieldset class="output_param" style = "display: inline-block;">
+        <legend>Output parameters</legend>
+        <h3>Model Parameters:</h3>
+        <a class="show_cm" href = "./MallCustomers/kvswcss.svg" target="_blank" >Show K vs WCSS Graph</a>
+        <h3>Performance Parameters:</h3>
+        <span>Within-Cluster-Sum-of-Squares (WCSS): </span><span id="wcss"></span>
+        <br><span>Execution Time: </span><span id="etime" ></span>
+    </fieldset>
+
+        <br></br>
+    <div>
+        <a class="back" href="../index.html">Back</a>
+    </div>
+  </body>
+
+</html>

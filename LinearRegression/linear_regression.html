@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <script src="../jquery-3.4.1.js"></script>
+    <script src="../jquery.magnific-popup.js"></script>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../magnific-popup.css">
+    <script src="linear_regression.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Algorithm-Centric</title>
+  </head>
+
+  <body bgcolor=#ffffff>
+    <div class="dropdown">
+      <button class="dropbtn">Linear Regression</button>
+    </div>
+    <div class="dropdown2">
+      <button class="dropbtn"> Data </button>
+      <div class="dropdown-content">
+        <span class="linear_regression_data" id="salary_data">Salary Data</span>
+      </div>
+    </div>
+
+    <div style= " position: relative;display: inline-block; padding-left: 100px;">
+        <a class="show_data" href="./SalaryData/table.svg">Show data</a>
+        <a class="show_data" href="./SalaryData/table.svg">Show preprocessed data</a>
+        <a class="show_data" href="./simple_linear_regression.py">Show code</a>
+    </div>
+
+    <img src="../default.svg" alt="Plot" class="plot" align="right">
+
+
+    <fieldset class="input_param" style = "display: inline-block;">
+        <legend>Input parameters</legend>
+        Test Size<br></br>
+        0% <span style = "float: right;">100%</span>
+        <div class="slidecontainer">
+                <input type="range" min="1" max="99" value="20" step = "8" name="t_size" class="rangeslider" id="myRange">
+        </div>
+    </fieldset>
+    <br></br>
+    <fieldset class="output_param" style = "display: inline-block;">
+        <legend>Output parameters</legend>
+        <span>Mean Squared Error (For Test Set): </span>
+        <span id="mae"></span>
+    </fieldset>
+
+
+    <label class="switch">
+      <input type="checkbox" id="traintest" checked="checked">
+      <span class="slider"></span>
+    </label>
+    <br></br>
+    <div>
+        <a class="back" href="../index.html">Back</a>
+    </div>
+  </body>
+
+</html>

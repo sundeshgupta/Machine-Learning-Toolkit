@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <script src="../jquery-3.4.1.js"></script>
+    <script src="../jquery.magnific-popup.js"></script>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../magnific-popup.css">
+    <script src="random_forest_classification.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Algorithm-Centric</title>
+  </head>
+
+  <body bgcolor=#ffffff>
+    <div class="dropdown">
+      <button class="dropbtn">Random Forest Classification</button>
+    </div>
+    <div class="dropdown2">
+      <button class="dropbtn"> Data </button>
+      <div class="dropdown-content">
+        <span class="linear_regression_data" id="Social_Network_Ads">SUV Purchased</span>
+      </div>
+    </div>
+
+    <div style= " position: relative;display: inline-block; padding-left: 100px;">
+        <a class="show_data" href="./SocialNetworkAds/table.svg" target="_blank">Show data</a>
+        <a class="show_data" href="./SocialNetworkAds/table.svg" target="_blank">Show preprocessed data</a>
+        <a class="show_data" href="./simple_linear_regression.py" target="_blank">Show code</a>
+    </div>
+
+    <img src="../default.svg" alt="Plot" class="plot" align="right">
+
+
+    <fieldset class="input_param" style = "display: inline-block;">
+        <legend>Input parameters</legend>
+        Test Size
+        <br>0% <span style = "float: right;">100%</span>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="100" value="20" class="rangeslider" id="t_size">
+        </div>
+        Number of Trees
+        <br>1 <span style = "float: right;">1000</span>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="1000" value="20" class="rangeslider" id="n_estimators">
+        </div>
+        Criterion
+        <form>
+            <input type="radio" name="criterion" value="gini" checked>Gini</input>
+            <input type="radio" name="criterion" value="entropy">Entropy</input>
+        </form>
+        Max Depth of tree
+        <br>1 <span style = "float: right;">100</span>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="100" value="1" step="1" class="rangeslider" id="max_depth">
+        </div>
+    </fieldset>
+
+    <br></br>
+    <button class="run_button">Show Output</button>
+    <br></br>
+    <fieldset class="output_param" style = "display: inline-block;">
+        <legend>Output parameters</legend>
+        <h3>Model Parameters:</h3>
+        <!-- <span>Depth: </span><span id="depth"></span> -->
+        <!-- <br><span>Number of Leaves: </span><span id="n_leaves" ></span> -->
+
+        <!-- <a class="show_cm" href = "./SocialNetworkAds/tree.png" target="_blank" >Show Decision Tree</a> -->
+        <h3>Performance Parameters:</h3>
+        <span>Accuracy Score: </span><span id="accu"></span>
+        <br><span>Execution Time: </span><span id="etime" ></span>
+        <br><a class="show_cm" href = "./SocialNetworkAds/cm.svg" target="_blank" >Show confusion matrix</a>
+        <br><a class="show_cr" href = "./SocialNetworkAds/cr.svg" target="_blank" >Show classification report</a>
+    </fieldset>
+
+    <label class="switch">
+      <input type="checkbox" id="traintest" checked="checked">
+      <span class="slider"></span>
+    </label>
+    <br></br>
+    <div>
+        <a class="back" href="../index.html">Back</a>
+    </div>
+  </body>
+
+</html>
