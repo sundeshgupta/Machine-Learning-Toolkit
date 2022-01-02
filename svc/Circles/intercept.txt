@@ -1,1 +1,0 @@
-Intercept is only available when using a linear kernel
